@@ -1,0 +1,23 @@
+[33mcommit f0309881ef82794a1bd6257cd321801bc38a0f3d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;33mtag: v4.1.4[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: David Miller <hello@davidmiller.io>
+Date:   Wed Apr 28 21:31:52 2021 -0400
+
+    run build and version bump
+
+[33mcommit 32c4bb5b8a9a1e50edfa979248c955d2cf58798f[m
+Author: David Miller <hello@davidmiller.io>
+Date:   Wed Apr 28 21:20:00 2021 -0400
+
+    Bootstrap 4.6.0 and dependencies update (final BS4 update)
+
+[33mcommit 7101b1ba1b307a9eac638f59a0f5f15fcd9b78a9[m[33m ([m[1;33mtag: v4.1.3[m[33m)[m
+Author: David Miller <hello@davidmiller.io>
+Date:   Fri Nov 6 17:29:24 2020 -0500
+
+    rebuild with version bump
+
+[33mcommit 9c5ab9faccfdfdb8be3ac261f1a53dc45633ff1a[m
+Author: David Miller <hello@davidmiller.io>
+Date:   Fri Nov 6 17:27:25 2020 -0500
+
+    formatting and add pro upgrade info
