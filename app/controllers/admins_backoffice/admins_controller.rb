@@ -1,3 +1,5 @@
 class AdminsBackoffice::AdminsController < AdminsBackofficeController
-  def index; end
+  def index
+    @admins = Admin.all
+  end
 end
