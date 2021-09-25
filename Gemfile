@@ -17,6 +17,7 @@ gem 'webpacker', '~> 5.0'
 # gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'devise'
+gem 'faker', '~> 2.19'
 gem 'jbuilder', '~> 2.7'
 gem 'rails-i18n', '~> 6.0.0' # For 6.0.0 or higher
 gem 'tty-spinner'
@@ -42,6 +43,7 @@ group :development do
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'rack-mini-profiler', '~> 2.0'
+  gem 'awesome_print', '~> 1.9', '>= 1.9.2'
 end
 
 group :test do
