@@ -16,9 +16,10 @@
           <td><%= admin.email %></td>
           <td><%= admin.created_at %></td>
           <td><%= admin.updated_at %></td>
-          <td>     <a href="#" class="btn btn-primary btn-circle">
+          <td>
+            <%= link_to edit_admins_backoffice_admin_path(admin), class: "btn btn-primary btn-circle" do  %>
               <i class="fas fa-edit"></i>
-            </a>
+            <% end %>
             <a href="#" class="btn btn-danger btn-circle">
               <i class="fas fa-trash"></i>
             </a></td>
