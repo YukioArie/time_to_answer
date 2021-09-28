@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  namespace :admins_backoffice do
-    get 'admins/index'
-  end
-  devise_for :users
   namespace :site do
     get 'welcome/index'
   end
@@ -11,8 +7,10 @@ Rails.application.routes.draw do
   end
   namespace :admins_backoffice do
     get 'welcome/index'
+    resources :admins, only: [:index]
   end
   devise_for :admins
+  devise_for :users
   get 'inicio', to: 'site/welcome#index'
   root to: 'site/welcome#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
