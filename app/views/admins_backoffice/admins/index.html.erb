@@ -25,9 +25,9 @@
             <%= link_to edit_admins_backoffice_admin_path(admin), class: "btn btn-primary btn-circle" do  %>
               <i class="fas fa-edit"></i>
             <% end %>
-            <a href="#" class="btn btn-danger btn-circle">
+            <%= link_to admins_backoffice_admin_path(admin), method: :delete, class:"btn btn-danger btn-circle", data: { confirm: "Deseja realmente excluir?" }  do %>
               <i class="fas fa-trash"></i>
-            </a></td>
+            <% end%></td>
         </tr>
       <% end%>
     </tbody>
