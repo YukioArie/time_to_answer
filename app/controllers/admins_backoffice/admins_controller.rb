@@ -15,8 +15,17 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
     end
   end
 
-  def create
+  def new
     @admin = Admin.new
+  end
+
+  def create
+    @admin = Admin.new(params_admin)
+    if @admin.save
+      redirect_to admins_backoffice_admins_path, notice: 'Administrador atualizado'
+    else
+      render :edit
+    end
   end
 
   private

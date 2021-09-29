@@ -7,7 +7,11 @@
         <th scope="col">Email</th>
         <th scope="col">Criado em</th>
         <th scope="col">Atualizado em</th>
-        <th scope="col"></th>
+        <th scope="col ">
+          <%= link_to new_admins_backoffice_admin_path, type:"button", class:"btn btn-success" do %>
+            <i class="fas fa-plus"></i>
+          <% end %>
+        </th>
       </tr>
     </thead>
     <tbody>
