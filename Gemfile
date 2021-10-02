@@ -19,8 +19,11 @@ gem 'webpacker', '~> 5.0'
 gem 'devise'
 gem 'faker', '~> 2.19'
 gem 'jbuilder', '~> 2.7'
+gem 'kaminari'
+gem 'kaminari-i18n'
 gem 'rails-i18n', '~> 6.0.0' # For 6.0.0 or higher
 gem 'tty-spinner'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -42,8 +45,8 @@ group :development do
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem 'rack-mini-profiler', '~> 2.0'
   gem 'awesome_print', '~> 1.9', '>= 1.9.2'
+  gem 'rack-mini-profiler', '~> 2.0'
 end
 
 group :test do
