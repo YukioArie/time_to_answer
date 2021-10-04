@@ -19,8 +19,8 @@
         <tr>
           <th scope="row"><%= admin.id %></th>
           <td><%= admin.email %></td>
-          <td><%= admin.created_at %></td>
-          <td><%= admin.updated_at %></td>
+          <td><%=  I18n.l(admin.created_at) %></td>
+          <td><%=  I18n.l(admin.updated_at) %></td>
           <td>
             <%= link_to edit_admins_backoffice_admin_path(admin), class: "btn btn-primary btn-circle" do  %>
               <i class="fas fa-edit"></i>
