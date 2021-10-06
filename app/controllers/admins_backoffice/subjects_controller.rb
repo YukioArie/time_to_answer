@@ -42,6 +42,6 @@ class AdminsBackoffice::SubjectsController < AdminsBackofficeController
   end
 
   def set_subject
-    @subject = Admin.find(params[:id])
+    @subject = Subject.find(params[:id])
   end
 end
