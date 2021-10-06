@@ -3,10 +3,10 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">id</th>
-        <th scope="col">Descrição</th>
-        <th scope="col">Criado em</th>
-        <th scope="col">Atualizado em</th>
+        <th><%= translate_attribute(@subjects, :id) %></th>
+        <th><%= translate_attribute(@subjects, :description) %></th>
+        <th><%= translate_attribute(@subjects, :created_at) %></th>
+        <th><%= translate_attribute(@subjects, :updated_at) %></th>
         <th scope="col ">
           <%= link_to new_admins_backoffice_subject_path, type:"button", class:"btn btn-success" do %>
             <i class="fas fa-plus"></i>

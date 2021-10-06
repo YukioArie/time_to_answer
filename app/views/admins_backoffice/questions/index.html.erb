@@ -3,9 +3,9 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">id</th>
-        <th scope="col">Pergunta</th>
-        <th scope="col">Assunto</th>
+        <th><%= translate_attribute(@questions, :id) %></th>
+        <th><%= translate_attribute(@questions, :description) %></th>
+        <th><%= translate_attribute(@questions, :subject) %></th>
         <th scope="col ">
           <%= link_to new_admins_backoffice_question_path, type:"button", class:"btn btn-success" do %>
             <i class="fas fa-plus"></i>
