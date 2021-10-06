@@ -22,5 +22,5 @@
     <%= form.label :subject_id  %>
     <%= form.collection_select(:subject_id, @subjects, :id, :description, {}, {class:"form-control"}) %>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary"><%= t('messages.save') %></button>
 <% end %>
