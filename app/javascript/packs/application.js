@@ -15,7 +15,8 @@ import "channels"
 require('stylesheets/sb-admin-2.css');
 require('stylesheets/custom.css');
 //import scripts
-require('jquery');
+require("jquery");
+require("@nathanvda/cocoon");
 require("src/sb-admin-2.js");
 require("src/custom.js");
 //import libs using yarn
