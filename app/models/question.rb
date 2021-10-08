@@ -4,4 +4,16 @@ class Question < ApplicationRecord
   accepts_nested_attributes_for :answers, reject_if: :all_blank, allow_destroy: true
 
   paginates_per 5
+
+  def self.seach(params, page)
+    Question.includes(:answers)
+            .where('lower(description) LIKE ?', "%#{params.downcase}%")
+            .page(page)
+  end
+
+  def self.last_questions(page)
+    Question.includes(:answers)
+            .order('created_at desc')
+            .page(page)
+  end
 end
