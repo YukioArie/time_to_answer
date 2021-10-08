@@ -1,12 +1,19 @@
-<h1>Site::Welcome#index</h1>
-<p>Find me in app/views/site/welcome/index.html.erb</p>
-<% if user_signed_in? %>
-  <p>O Usuário <strong>está </strong> logado <strong><%= current_user.email %></p>
-  <% else %>
-    <p>O Usuário <strong>não está</strong> logado</p>
-  <%end%>
-  <% if admin_signed_in? %>
-    <p>O Admin <strong>está </strong> logado <strong><%= current_admin.email %></strong></p>
-  <% else %>
-    <p>O Admin <strong>não está</strong> logado</p>
-  <%end%>
+<% @questions.each do |question| %>
+  <div class="card ml-5 mr-5 mb-5">
+    <div class="card-header">
+      <%= question.description %>
+    </div>
+    <div class="card-body">
+      <ul>
+        <% question.answers.each do |answer|%>
+          <li>
+            <%= answer.description %>
+          </li>
+        <% end%>
+      </ul>
+    </div>
+  </div>
+<% end%>
+<div class="ml-5">
+  <%= paginate @questions %>
+</div>

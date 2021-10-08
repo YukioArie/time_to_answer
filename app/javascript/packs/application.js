@@ -14,6 +14,7 @@ import "channels"
 //import css
 require('stylesheets/sb-admin-2.css');
 require('stylesheets/custom.css');
+require('stylesheets/navbar.css')
 //import scripts
 require("jquery");
 require("@nathanvda/cocoon");

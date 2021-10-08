@@ -8,8 +8,54 @@
     <%= stylesheet_pack_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </head>
-  <body>
-    <h1>Layout Site</h1>
-    <%= yield %>
-  </body>
-</html>
+  <body class="bg-white">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Time To Answer</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <% unless user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to 'Entrar', new_user_session_path, class:"nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Registrar-se', new_user_registration_path, class:"nav-link" %>
+            </li>
+          <% else %>
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= current_user.email %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <%= link_to  users_backoffice_welcome_index_path,  class:"dropdown-item" do%>
+                  <i class="fa fa-user "></i> Perfil
+                <% end%>
+                <div class="dropdown-divider"></div>
+                <%= link_to  destroy_user_session_path, method: :delete, class:"dropdown-item" do%>
+                  <i class="fa fa-sign-out "></i> Sair
+                <% end%>
+              </div>
+            </li>
+          <% end%>
+        </ul>
+      </div>
+    </nav>
+    <div class="jumbotron ml-5 mr-5">
+      <h1>Site::Welcome#index</h1>
+      <p>Find me in app/views/site/welcome/index.html.erb</p>
+      <% if user_signed_in? %>
+        <p>O Usuário <strong>está </strong> logado <strong><%= current_user.email %></p>
+        <% else %>
+          <p>O Usuário <strong>não está</strong> logado</p>
+        <%end%>
+        <% if admin_signed_in? %>
+          <p>O Admin <strong>está </strong> logado <strong><%= current_admin.email %></strong></p>
+        <% else %>
+          <p>O Admin <strong>não está</strong> logado</p>
+        <%end%>
+      </div>
+      <%= yield %>
+    </body>
+  </html>
