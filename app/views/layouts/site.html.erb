@@ -46,23 +46,6 @@
         <% end%>
       </div>
     </nav>
-    <div class="jumbotron ml-5 mr-5">
-      <% unless params[:q] %>
-        <h1>Ultimas questões criadas: </h1>
-      <% else %>
-        <h1><%= "Resultados para \"#{params[:q]}\":" %></h1>
-      <% end%>
-      <% if user_signed_in? %>
-        <p>O Usuário <strong>está </strong> logado <strong><%= current_user.email %></p>
-        <% else %>
-          <p>O Usuário <strong>não está</strong> logado</p>
-        <%end%>
-        <% if admin_signed_in? %>
-          <p>O Admin <strong>está </strong> logado <strong><%= current_admin.email %></strong></p>
-        <% else %>
-          <p>O Admin <strong>não está</strong> logado</p>
-        <%end%>
-      </div>
-      <%= yield %>
-    </body>
-  </html>
+    <%= yield %>
+  </body>
+</html>
