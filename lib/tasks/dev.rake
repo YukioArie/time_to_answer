@@ -65,33 +65,37 @@ namespace :dev do
       end
     end
   end
-
+  desc 'Reseta o contador dos assuntos'
+  task reset_subject_counter: :environment do
+    show_spinner('Resetando o contador dos assuntos.....') do
+      Subject.all.each do |subject|
+        Subject.reset_counters(subject.id, :questions)
+      end
+    end
+  end
   private
 
   def elect_true_answer(array_answer = [])
     array_answer.sample[:correct] = true
   end
-  
-  def create_question_params(subject = Subject.all.sample )
+
+  def create_question_params(subject = Subject.all.sample)
     {
       question: { description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
                   subject: subject,
-                  answers_attributes: [] 
-                  }
-                }
-    
+                  answers_attributes: [] }
+    }
   end
-  
-  def add_answers(array_answer) 
+
+  def add_answers(array_answer)
     rand(3..5).times do
       array_answer.push(create_answer_params)
     end
   end
-  
+
   def create_answer_params
     { description: Faker::Lorem.sentence, correct: false }
   end
-  
 
   def show_spinner(_msg)
     spinner = TTY::Spinner.new("[:spinner] #{_msg} ...", format: :pulse_2)

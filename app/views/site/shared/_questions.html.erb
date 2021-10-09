@@ -16,7 +16,7 @@
       <div class="card ml-5 mr-5 mb-5">
         <div class="card-header">
           <span class="badge badge-dark mr-2">
-            <%= link_to question.subject.description, site_subject_search_path(question.subject.description,question.subject_id), class:"text-white"%>
+            <%= link_to "#{question.subject.description} (#{question.subject.questions_count})", site_subject_search_path(question.subject.description,question.subject_id), class:"text-white"%>
           </span>
           <%= question.description %>
         </div>
