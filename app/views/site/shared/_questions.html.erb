@@ -1,9 +1,5 @@
 <div class="jumbotron ml-5 mr-5">
-  <% unless params[:q] %>
-    <h1>Ultimas questões criadas: </h1>
-  <% else %>
-    <h1><%= "Resultados para \"#{params[:q]}\":" %></h1>
-  <% end%>
+  <h1> <%= msg_jumbotron %></h1>
   <% if user_signed_in? %>
     <p>O Usuário <strong>está </strong> logado <strong><%= current_user.email %></p>
     <% else %>
@@ -19,6 +15,9 @@
     <%= form_with url: site_answer_path,  local: false do |f|%>
       <div class="card ml-5 mr-5 mb-5">
         <div class="card-header">
+          <span class="badge badge-dark mr-2">
+            <%= link_to question.subject.description, site_subject_search_path(question.subject.description,question.subject_id), class:"text-white"%>
+          </span>
           <%= question.description %>
         </div>
         <div class="card-body">
