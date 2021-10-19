@@ -24,12 +24,12 @@
                   </div>
                 <% end %>
                 <%= f.submit "Entrar", class:"btn btn-light bg-light"%>
-                <a class="reset_pass" href="#">Lost your password?</a>
+                <%= link_to 'Esqueceu a senha?',new_user_password_path , class:"reset_pass" %>
               </div>
               <div class="clearfix"></div>
               <div class="separator">
                 <p class="change_link">New to site?
-                  <a href="#signup" class="to_register"> Create Account </a>
+                  <%= link_to 'Crie uma conta',new_user_registration_path , class:"to_register" %>
                 </p>
                 <div class="clearfix"></div>
                 <br />
