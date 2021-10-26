@@ -8,7 +8,6 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   end
 
   def new
-    console
     @question = Question.new
   end
 
@@ -22,9 +21,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
     end
   end
 
-  def edit
-    console
-  end
+  def edit; end
 
   def update
     if @question.update(params_question)
@@ -60,12 +57,16 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   end
 
   def exists_description_by_question?
-    questions_description = Question.all.pluck(:description).map(&:downcase)
-    if questions_description.include?(params['question']['description'].downcase)
-      console
-      @question = Question.new(description: params['question']['description'])
+    if Question._seach_description_(params['question']['description'])
+      generate_question_by_params
       get_subjects
+      flash.now[:alert] = "Já existe questão com a descrição '#{params['question']['description'].strip}'"
       render :new
     end
+  end
+
+  def generate_question_by_params
+    @question = Question.new(description: params['question']['description'],
+                             subject_id: params['question']['subject_id'])
   end
 end
