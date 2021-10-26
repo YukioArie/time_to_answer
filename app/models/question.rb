@@ -9,6 +9,9 @@ class Question < ApplicationRecord
                       .where('lower(description) LIKE ?', "%#{params.downcase}%")
                       .page(page)
                   }
+  scope :_seach_description_, lambda { |params|
+    where('lower(description) LIKE ?', "%#{params.downcase}%")
+  }
 
   scope :_seach_subject, lambda { |params_subject_id, page|
                            includes(:answers, :subject)
